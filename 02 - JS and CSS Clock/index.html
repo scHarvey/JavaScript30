@@ -71,22 +71,19 @@
 
   <script>
     function rotateSeconds(s) {
-      console.log(s);
       const degreesOfRotation = ((s/60) * 360) + 90;
       hand = document.querySelector('.second-hand');
       hand.style.transform = `rotate(${degreesOfRotation}deg)`;
     }
 
     function rotateMinutes(m, s) {
-      console.log(m + s/60);
-      const degreesOfRotation = (((m+s/60)/60) * 360) + 90;
+      const degreesOfRotation = (((m + (s/60)) / 60) * 360) + 90;
       hand = document.querySelector('.min-hand');
       hand.style.transform = `rotate(${degreesOfRotation}deg)`;
     }
 
     function rotateHours(h, m) {
-      console.log(h + m/60);
-      const degreesOfRotation = (((h+m/60)/12) * 360) + 90;
+      const degreesOfRotation = (((h + (m/60)) / 12) * 360) + 90;
       hand = document.querySelector('.hour-hand');
       hand.style.transform = `rotate(${degreesOfRotation}deg)`;
     }
